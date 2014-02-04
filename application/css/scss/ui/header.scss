@@ -1,0 +1,203 @@
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  z-index:2;
+
+  section.header {
+    background: #C42C2C;
+    height:$header-height;
+    padding:0 0 0 34px;
+    line-height:$header-height;
+
+    .logo {
+      margin-top:17px;
+      display:block;
+      position:absolute;
+      height:25px;
+      width:40px;
+      background:url(../img/logo@2x.png) no-repeat center center transparent;
+      background-size:contain;
+    }
+
+    .titlebar {
+      position:absolute;
+      font-size: 20px;
+      color: #FFFFFF;
+      line-height: 24px;
+      letter-spacing: 0.4px;
+      margin:18px 0 0 105px;
+      width:500px;
+      > strong {
+        font-weight:normal;
+        margin-right:5px;
+      }
+    }
+
+    .account {
+      @include transition(opacity, 0.2s);
+      color:#FFF;
+      opacity: 0.48;
+      float:right;
+      text-align: right;
+      letter-spacing: 0.4px;
+      text-decoration: none;
+
+      span {
+        display:inline-block;
+        font-family: "Proxima Nova Condensed";
+        font-size:14px;
+      }
+
+      i {
+        display:block;
+        width: 15px;
+        height: 14px;
+        float: right;
+        background: url(../img/icon-person.png) no-repeat center center;
+        background-size: contain;
+        margin: 23px 0 0 4px;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &.account-profile {
+        opacity: 1;
+        span {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .search {
+      @include transition(all, 0.2s);
+      border-left:3px solid #B02727;
+      height: $header-height;
+      float:right;
+      margin-left: 19px;
+      padding: 0 20px;
+      min-width: 60px;
+
+      input {
+        @include transition(width, 0.4s);
+        display:inline-block;
+        float: left;
+        margin-top: 19px;
+        background:transparent;
+        border:0;
+        font-size: 16px;
+        color: #FFFFFF;
+        line-height: 23px;
+        letter-spacing: 0px;
+        width:0;
+        &:hover {
+          cursor:pointer;
+        }
+      }
+
+      .handle {
+        @include transition(all, 0.4s);
+        width: 15px;
+        height: 15px;
+        background: url(../img/icon-search.png) no-repeat center center transparent;
+        background-size: contain;
+        opacity: 0.48;
+        position: absolute;
+        top: 50%;
+        margin-top: -8px;
+        right: 20px;
+      }
+      &:hover {
+        background:#B02727;
+        cursor:pointer;
+        .handle {
+          opacity: 1;
+        }
+      }
+      &.open {
+        background:#B02727;
+        .handle {
+          opacity: 1;
+        }
+        input {
+          width:214px;
+          margin-right:20px;
+          &:hover {
+            cursor:text;
+          }
+        }
+        &:hover {
+          cursor:default;
+        }
+      }
+    }
+    .suggestions {
+      @include transition(all, 0.4s);
+      background:#FFF;
+      position: absolute;
+      right: 0;
+      width: 276px;
+      top: 61px;
+      padding:15px 0 10px 0;
+      display:none;
+
+      &.open {
+        -moz-box-shadow:    0px 2px 4px 0px rgba(0,0,0,0.13);
+        -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.13);
+        box-shadow:         0px 2px 4px 0px rgba(0,0,0,0.13);
+        display:block;
+      }
+
+      .suggestion {
+        margin-bottom:8px;
+        padding:5px 20px 2px 20px;
+
+        &:hover {
+          background:#EEE;
+          cursor:pointer;
+        }
+
+        h3 {
+          font-family: "Proxima Nova Condensed";
+          font-size: 19px;
+          color: #000000;
+          line-height: 21px;
+          letter-spacing: 0px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .row {
+          @extend .group;
+
+          span {
+            font-size: 13px;
+            color: #000000;
+            line-height: 21px;
+            letter-spacing: 0px;
+            opacity:0.52;
+            float:left;
+            width:160px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          i {
+            font-style:normal;
+            font-size: 13px;
+            color: #000000;
+            line-height: 21px;
+            letter-spacing: 0px;
+            opacity:0.25;
+            float:right;
+          }
+        }
+      }
+    }
+  }
+}

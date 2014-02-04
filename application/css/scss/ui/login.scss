@@ -1,0 +1,111 @@
+.window {
+  @extend .group; 
+  width:750px;
+  height:300px;
+  margin:150px auto;
+  &.narrow {
+    margin-top:100px;
+  }
+  .box {
+    padding:22px;
+    background:#FFF;
+    &.login {
+      width:310px;
+      margin-right:10px;
+      float:left;
+    }
+    &.signup {
+      float:left;
+      width:430px;
+    }
+    &.forgot-pwd {
+      width:380px;
+      margin:0 auto 40px auto;
+    }
+    h2 {
+      font-family: "Proxima Nova Condensed";
+      font-size: 30px;
+      color: #000000;
+      line-height: 38px;
+      letter-spacing: 0px;
+      text-align: center;
+    }
+    h3 {
+      font-family: "Proxima Nova Condensed";
+      font-size: 22px;
+      color: #000000;
+      line-height: 32px;
+      letter-spacing: 0px;
+      text-align: center;
+      margin-top:3px;
+    }
+    > p {
+      margin:15px 0 20px 0;
+      font-size:16px;
+      line-height: 22px;
+      color:#888;
+    }
+    input[type="text"], input[type="password"] {
+      background: #EEEEEE;
+      padding:12px 10px;
+      border:0;
+      width:100%;
+      display:block;
+      font-family: "Proxima Nova";
+      font-size: 16px;
+      color: #000000;
+      line-height: 20px;
+      letter-spacing: 0.4px;
+    }
+    input[type="text"] {
+      margin-top:23px;
+      margin-bottom:9px;
+    }
+    .btn {
+      margin:23px auto 0 auto;
+      height:45px;
+      max-width: 350px;
+      line-height: 46px;
+      text-align: center;
+      font-size: 18px;
+      color: #FFFFFF;
+      display:block;
+      text-decoration: none;
+      text-transform: uppercase;
+      background: #C42C2C;
+      &.alt {
+        border:3px solid #C42C2C;
+        background:#FFF;
+        color:#C42C2C;
+        line-height: 41px;
+      }
+    }
+    .info {
+      font-size: 11px;
+      color: #000000;
+      line-height: 19px;
+      letter-spacing: 0.3px;
+      text-align: center;
+      display: block;
+      opacity: 0.42;
+      text-decoration: none;
+      margin-top:7px;
+      margin-bottom:0;
+    }
+    .yell {
+      background: #FFFDEC;
+      padding:8px 12px;
+      margin-top:26px;
+      p {
+        font-size: 16px;
+        color: #000000;
+        line-height: 21px;
+        letter-spacing: 0px;
+        opacity: 0.6;
+        &:first-child {
+          margin-bottom:10px;
+        }
+      }
+    }
+  }
+}

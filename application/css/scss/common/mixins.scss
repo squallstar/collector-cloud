@@ -1,0 +1,9 @@
+@mixin transition($property, $duration) {
+  -moz-transition:$property $duration;
+  -webkit-transition:$property $duration;
+  transition:$property $duration;
+}
+
+@mixin responsive($min, $max) {
+  @media only screen and (min-width: $min + 1) and (max-width: $max) { @content; }
+}

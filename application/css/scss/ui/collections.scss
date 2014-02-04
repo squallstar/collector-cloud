@@ -1,0 +1,70 @@
+section.collections {
+  padding: 40px 10px 30px 40px;
+  position: relative;
+  width: 100%;
+  > .wrapper {
+    position:relative;
+    width:100%;
+  }
+    
+  article {
+    width:25%;
+    margin:0 0 20px 0;
+    height:200px;
+    padding-right:20px;
+    &.double {
+      width:50%;
+      height:420px;
+    }
+    .bg {
+      @include transition(opacity, 0.35s);
+      margin-right:20px;
+      width:100%;
+      height:100%;
+      background-color:#FFF;
+      position:relative;
+      background-repeat:no-repeat;
+      background-position:center center;
+      background-size:cover;
+      .content {
+        bottom:0;
+        position:absolute;
+        width:100%;
+        padding:10px 10px;
+        color:#FFF;
+        opacity: 0.94;
+        h2 {
+          font-family: "Proxima Nova Condensed";
+          font-size: 19px;
+          line-height: 23px;
+        }
+        span {
+          font-size: 12px;
+          color: #FFFFFF;
+          line-height: 14px;
+          letter-spacing: 0px;
+        }
+      }
+    }
+
+    &:hover {
+      cursor:pointer;
+      .bg {
+        opacity: 0.9;
+        .content {
+          opacity: 1;
+        }
+      }
+    }      
+  }
+}
+
+@include responsive (950px, 1300px) {
+  section.collections article { width:33.3333%; &.double { width:66.6667% } }
+}
+@include responsive (450px, 950px) {
+  section.collections article { width:50%; &.double { width:100% } }
+}
+@include responsive (1px, 450px) {
+  section.collections article { width:100%; &.double { width:100% } }
+}

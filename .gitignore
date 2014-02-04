@@ -1,0 +1,5 @@
+application/logs/*
+node_modules/
+assets/css/*
+assets/js/*
+.sass-cache/

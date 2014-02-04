@@ -1,0 +1,71 @@
+HOST: http://cloud.collectorwp.com/api/
+
+--- Collector Cloud API v1 ---
+---
+Collector brings the best news-reading experience to your Windows Phone. A project by @squallstar and @mintsugar
+---
+
+--
+Search
+--
+Returns a list of articles
+GET /search?q=keyword
+< 200
+< Content-Type: application/json
+[
+  {
+    "id": "88",
+    "source": "7",
+    "url": "http:\/\/www.squallstar.it\/blog\/black-london",
+    "datepublish": "2012-07-15 22:33:00",
+    "title": "Black London",
+    "image_url": "http:\/\/squallstar.it\/attach\/Blog\/images\/2063\/wl3.jpg",
+    "author": "",
+    "content": "A couple of weeks ago I finally moved from Verona (Italy) to London.Tired of standard London pictures, I decided to make a small gallery of B\/W minimalist photos that I took during these first two weeks in the city. I hope you like them.",
+    "domain": "www.squallstar.it",
+    "source_title": "Blog",
+    "color": "#5D00C5"
+  }
+]
+
+--
+Return a list of suggestions
+--
+List of suggestions (based on the sources)
+GET /suggestions?q=keyword
+< 200
+< Content-Type: application/json
+[
+  {
+    "domain": "www.theverge.com",
+    "source_id": "12",
+    "source_name": "The Verge -  All Posts",
+    "relevance": "10"
+  },
+  {
+    "domain": "feedproxy.google.com",
+    "source_id": "383",
+    "source_name": "The Verge -  Microsoft Posts",
+    "relevance": "10"
+  }
+]
+
+--
+Outdated sources
+--
+List of outdated sources
+GET /outdated_sources
+< 200
+< Content-Type: application/json
+{
+    "< 30 minutes":169,
+    "< 60 minutes":0
+}
+
+--
+Articles lits
+--
+List of articles from the public collection (or user's collections if logged in with a cookie) 
+GET /articles?ts=minTimestamp
+< 200
+< Content-Type: application/json

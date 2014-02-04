@@ -1,0 +1,18 @@
+a(class='logo', href='#', title='Collector')
+
+.titlebar
+  strong Collector &bull;
+  span Loading...
+
+.search
+  input(type='text', value='#{search_query}')
+  .handle
+
+if !user
+  a(class='account account-signin', href='#login')
+    span Login to view your collections
+    i
+else
+  a(class='account account-profile', href='#profile')
+    span #{user.username ? user.username : user.email}
+    i &#128100;

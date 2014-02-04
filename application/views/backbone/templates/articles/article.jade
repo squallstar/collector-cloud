@@ -1,0 +1,38 @@
+div(class='spacer #{kind}')
+  if image_url
+    .cover(style='background-image:url(#{image_url}); background-color:#{color}')
+      if has_collection && kind == 'rss'
+        h4(style='background-color:#{color}') #{collection}
+      span
+        if author
+          h5 #{author}
+        else if source_title
+          h5 #{source_title}
+        p #{time_ago}
+    .content
+      h2 !{title}
+      p !{content}
+      span #{domain}
+  else
+    .cover(style='background-color:#{color}').flat
+      if kind == 'rss'
+        if has_collection
+          h4 #{collection}
+        else
+          h4 #{source_trimmed}
+      span
+        h2 !{title_trimmed}
+        p
+          | #{time_ago}
+          | #{author ? ' &bull; '+author : ''}
+    if kind == 'rss'
+      .content
+        if content
+          p !{content}
+        span #{domain}
+.actions
+  .actions-wrap
+    a(class='action open-website', href='#') View article
+    if show_more
+      a(class='action more-this-source', href='#') More from #{source_trimmed}
+    a(class='action cancel', href='#') Cancel

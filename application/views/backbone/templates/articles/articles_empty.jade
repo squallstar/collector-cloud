@@ -1,0 +1,16 @@
+if error
+  h3 Oops... There was an error.
+  p We couldn't retrieve the articles right now. Please try later.
+else if fetched
+  h3 Your search !{query} did not match any articles.
+  p Make sure all words are spelled correctly, try different or more general keywords.
+else if searching
+  h3 Searching for !{query}...
+  p Please be patient, it will only take a few seconds.
+else
+  if user
+    h3 Loading your articles...
+    p We're busy collecting dozen of articles from your collections, please wait.
+  else
+    h3 Please wait...
+    p We're busy collecting dozen of articles from the public collections.
