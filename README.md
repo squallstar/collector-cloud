@@ -1,4 +1,4 @@
-# Collector Cloud
+# Collector & Fragments.me Cloud
 
 This project consists in two pieces:
 
@@ -50,6 +50,12 @@ While on development, you can manually run each job accessing your app from the 
 
     http://localhost/cron/update_all_sources
     
+---
+
+## API
+
+Documentation will be available soon. In the meantime you can have a look at the project Apiary file in the root directory ``apiary.apib``.
+
 ---
 
 ## Adding sources
