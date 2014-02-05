@@ -46,6 +46,10 @@ In order to let your application auto-fetch the articles and keep the indexes up
     # Optimizes the tables once a day
     0 12 * * * php /path/to/app/index.php cron optimize_tables
     
+While on development, you can manually run each job accessing your app from the browser like this:
+
+    http://localhost/cron/update_all_sources
+    
 ---
 
 ## Adding sources
