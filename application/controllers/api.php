@@ -52,7 +52,7 @@ class Api extends CI_Controller
   {
     if ($id = $this->session->userdata('id'))
     {
-      $DBSquallstar = $this->load->database('squallstar', TRUE);
+      $DBSquallstar = $this->load->database('users', TRUE);
 
       $res = $DBSquallstar->where('id', $id)
                           ->select('data')
@@ -82,7 +82,7 @@ class Api extends CI_Controller
     {
       $this->output->set_status_header($status);
     }
-    
+
     $user = $this->session->userdata('id') ? " [User #" . $this->session->userdata('id') . ']' : '';
 
     $this->benchmark->mark('code_end');
@@ -165,7 +165,7 @@ class Api extends CI_Controller
     {
       $data = array();
 
-      $DBSquallstar = $this->load->database('squallstar', TRUE);
+      $DBSquallstar = $this->load->database('users', TRUE);
 
       $res = $DBSquallstar->where('email', $this->input->post('email'))
                           ->select('username, email, password')
@@ -207,7 +207,7 @@ class Api extends CI_Controller
       return $this->_display($data, 401);
     }
 
-    $DBSquallstar = $this->load->database('squallstar', TRUE);
+    $DBSquallstar = $this->load->database('users', TRUE);
 
     $res = $DBSquallstar->where('email', $user['email'])
                         ->where('password', $user['password'])

@@ -1,5 +1,11 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+//Twitter keys
+$config['twitter_consumer_key'] = 'your_twitter_consumer_key';
+$config['twitter_consumer_secret'] = 'your_twitter_consumer_private_key';
+
+$config['analytics_id'] = 'your_google_analytics_id';
+
 // Custom configs
 $config['colors'] = array(
   '#00C1C5', '#0097C5', '#00C556', '#C54A00', '#B5C500', '#C51F00', '#005AC5', '#5D00C5',

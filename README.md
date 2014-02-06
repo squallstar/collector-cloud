@@ -17,14 +17,20 @@ You'll find a dump of the database here ``application/config/database.create.sql
 
 Your virtualhost should point to the root of the project - also make sure that the webserver (Apache) is reading the ``.htaccess`` file.
 
+If you want to use the system to also fetch Tweets, configure your Twitter app details in ``application/config/config.php``:
+
+    $config['twitter_consumer_key'] = 'your_twitter_consumer_key';
+    $config['twitter_consumer_secret'] = 'your_twitter_consumer_private_key';
+
+
 When your database/vhost setup is done, just install the nodejs dependencies and run grunt from your command line to build the javascript/sass sources:
 
     $ npm install .
-    
-Then finally: 
+
+Then finally:
 
     $ grunt
-    
+
 ---
 
 ## Cronjobs
@@ -45,11 +51,11 @@ In order to let your application auto-fetch the articles and keep the indexes up
     #
     # Optimizes the tables once a day
     0 12 * * * php /path/to/app/index.php cron optimize_tables
-    
+
 While on development, you can manually run each job accessing your app from the browser like this:
 
     http://localhost/cron/update_all_sources
-    
+
 ---
 
 ## API

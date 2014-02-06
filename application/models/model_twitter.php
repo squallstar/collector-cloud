@@ -31,8 +31,8 @@ class Model_twitter extends CI_Model
     $conf = array(
       'oauth_access_token' => $source['oauth_key'],
       'oauth_access_token_secret' => $source['oauth_secret'],
-      'consumer_key' => "OzHmVZmElz2xh20nBezHiw",
-      'consumer_secret' => "wJqaPwVr19lZ5J7SxJxmUJmyu5lOYzg5NOi1KZ2o"
+      'consumer_key' => $this->config->item('twitter_consumer_key'),
+      'consumer_secret' => $this->config->item('twitter_consumer_secret')
     );
 
     $twitter = new TwitterAPIExchange($conf);
@@ -44,13 +44,13 @@ class Model_twitter extends CI_Model
     foreach (json_decode($result) as $tweet)
     {
       if (isset($tweet->entities) && (count($tweet->entities->urls) || isset($tweet->entities->media)))
-      { 
+      {
         $hash = 'twitter-' . $tweet->id;
         $tweet->hash = $hash;
         $tweets[$hash] = $tweet;
       }
     }
-    
+
     return $tweets;
   }
 

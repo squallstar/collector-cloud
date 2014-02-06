@@ -21,21 +21,21 @@ $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 
 // Users DB
-$db['squallstar']['hostname'] = 'localhost';
-$db['squallstar']['username'] = 'root';
-$db['squallstar']['password'] = 'root';
-$db['squallstar']['database'] = 'collector';
-$db['squallstar']['dbdriver'] = 'mysql';
-$db['squallstar']['dbprefix'] = '';
-$db['squallstar']['pconnect'] = TRUE;
-$db['squallstar']['db_debug'] = TRUE;
-$db['squallstar']['cache_on'] = FALSE;
-$db['squallstar']['cachedir'] = APPPATH . 'cache/queries/';
-$db['squallstar']['char_set'] = 'utf8';
-$db['squallstar']['dbcollat'] = 'utf8_general_ci';
-$db['squallstar']['swap_pre'] = '';
-$db['squallstar']['autoinit'] = TRUE;
-$db['squallstar']['stricton'] = FALSE;
+$db['users']['hostname'] = 'localhost';
+$db['users']['username'] = 'root';
+$db['users']['password'] = 'root';
+$db['users']['database'] = 'collector';
+$db['users']['dbdriver'] = 'mysql';
+$db['users']['dbprefix'] = '';
+$db['users']['pconnect'] = TRUE;
+$db['users']['db_debug'] = TRUE;
+$db['users']['cache_on'] = FALSE;
+$db['users']['cachedir'] = APPPATH . 'cache/queries/';
+$db['users']['char_set'] = 'utf8';
+$db['users']['dbcollat'] = 'utf8_general_ci';
+$db['users']['swap_pre'] = '';
+$db['users']['autoinit'] = TRUE;
+$db['users']['stricton'] = FALSE;
 
 
 /* End of file database.php */
